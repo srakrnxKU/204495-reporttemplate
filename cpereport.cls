@@ -71,4 +71,8 @@
 % Table and Figure captions
 \RequirePackage{caption}
 
+% Theorems
+\RequirePackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{definition}{บทนิยาม}[section]
 \endinput
