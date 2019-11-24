@@ -33,6 +33,7 @@
 \RequirePackage{titlesec}
 \titleformat{\chapter}[display]{\centering \large \bfseries}{\chaptername\ \thechapter}{0pt}{}
 \titleformat{\section}[hang]{\bfseries}{\thesection\ }{0pt}{}
+\titleformat{\subsection}[hang]{\bfseries}{\thesubsection\ }{0pt}{}
 \titlespacing*{\chapter}{0pt}{0.5in}{25pt}
 \titlespacing*{name=\chapter,numberless}{0pt}{0pt}{25pt}
 
@@ -75,4 +76,6 @@
 \RequirePackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{definition}{บทนิยาม}[section]
+
+% Maths
 \endinput
