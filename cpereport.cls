@@ -76,6 +76,7 @@
 \RequirePackage{amsthm}
 \theoremstyle{definition}
 \newtheorem{definition}{บทนิยาม}[section]
+\newtheorem{theorem}{ทฤษฎีบท}[section]
 
 % Maths
 \endinput

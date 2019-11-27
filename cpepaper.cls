@@ -16,10 +16,11 @@
 % Typeface
 \RequirePackage{fontspec}
 \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
-\setmainfont{Laksaman}
+\setsansfont{Laksaman}
 \setmonofont{Tlwg Typist}
-\newfontfamily\thaifont{Laksaman}
+\newfontfamily\thaifont{Kinnari}
 \newfontfamily\thaifontsf{Laksaman}
+\renewcommand{\familydefault}{\sfdefault}
 
 % Languages
 \RequirePackage{polyglossia}
@@ -28,28 +29,34 @@
 % Typography
 \RequirePackage{indentfirst}
 \setlength{\parindent}{0.5in}
-\renewcommand{\normalsize}{\fontsize{10pt}{12}\selectfont}
-\renewcommand\large{\@setfontsize\large{12pt}{14}}
-\renewcommand\Large{\@setfontsize\Large{14pt}{16}}
-\renewcommand\LARGE{\@setfontsize\LARGE{16pt}{18}}
+\renewcommand{\normalsize}{\fontsize{10pt}{16pt}\selectfont}
+\renewcommand\large{\@setfontsize\large{12pt}{14pt}}
+\renewcommand\Large{\@setfontsize\Large{14pt}{16pt}}
+\renewcommand\LARGE{\@setfontsize\LARGE{16pt}{18pt}}
 
 \RequirePackage{titlesec}
-\titleformat{\section}[hang]{\large \bfseries}{\thesection.\ }{0pt}{}
-\titleformat{\subsection}[hang]{\large \bfseries}{\thesubsection\ }{0pt}{}
-\titleformat{\subsubsection}[hang]{\large \bfseries}{\thesubsubsection\ }{0pt}{}
+\titleformat{\section}[hang]{\large \bfseries}{\thesection.\hspace{0.5cm}}{0pt}{}
+\titleformat{\subsection}[hang]{\large \bfseries}{\thesubsection\hspace{0.5cm}}{0pt}{}
+\titleformat{\subsubsection}[hang]{\large \bfseries}{\thesubsubsection\hspace{0.5cm}}{0pt}{}
 % \titlespacing*{\chapter}{0pt}{0.5in}{25pt}
 % \titlespacing*{name=\chapter,numberless}{0pt}{0pt}{25pt}
 
-\makeatletter         
-\renewcommand\maketitle{
-{\raggedright % Note the extra {
-\begin{center}
-{\Huge \bfseries \sffamily \@title }\\[4ex] 
-{\Large  \@author}\\[4ex] 
-\@date\\[8ex]
-\end{center}}} % Note the extra }
-\makeatother
-
 % Margins
-\RequirePackage[left=21mm,right=29mm,top=21mm,bottom=29mm]{geometry}
+\RequirePackage[left=21mm,right=21mm,top=29mm,bottom=29mm]{geometry}
+\RequirePackage{multicol}
 \setlength{\columnsep}{6mm} 
+
+% Title
+\newcommand\entitle[1]{\renewcommand\@entitle{#1}}
+\newcommand\@entitle{\@latex@error{No \noexpand\entitle given}\@ehc}
+
+\makeatletter
+\renewcommand*{\maketitle}{%
+    \begin{center}
+        \fontsize{14pt}{20pt}\selectfont
+        \textbf{\@title \\ \@entitle}
+        \par
+    \end{center}
+    \vskip 2cm
+}
+\makeatother
