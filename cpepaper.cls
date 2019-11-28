@@ -6,7 +6,7 @@
 \ProcessOptions
 
 % Load classes
-\LoadClass{article}
+\LoadClass[a4paper,compsoc,conference]{IEEEtran}
 
 % Custom settings
 % Thai language support
@@ -34,29 +34,7 @@
 \renewcommand\Large{\@setfontsize\Large{14pt}{16pt}}
 \renewcommand\LARGE{\@setfontsize\LARGE{16pt}{18pt}}
 
-\RequirePackage{titlesec}
-\titleformat{\section}[hang]{\large \bfseries}{\thesection.\hspace{0.5cm}}{0pt}{}
-\titleformat{\subsection}[hang]{\large \bfseries}{\thesubsection\hspace{0.5cm}}{0pt}{}
-\titleformat{\subsubsection}[hang]{\large \bfseries}{\thesubsubsection\hspace{0.5cm}}{0pt}{}
-% \titlespacing*{\chapter}{0pt}{0.5in}{25pt}
-% \titlespacing*{name=\chapter,numberless}{0pt}{0pt}{25pt}
-
 % Margins
-\RequirePackage[left=21mm,right=21mm,top=29mm,bottom=29mm]{geometry}
+%\RequirePackage[left=21mm,right=21mm,top=29mm,bottom=29mm]{geometry}
 \RequirePackage{multicol}
 \setlength{\columnsep}{6mm} 
-
-% Title
-\newcommand\entitle[1]{\renewcommand\@entitle{#1}}
-\newcommand\@entitle{\@latex@error{No \noexpand\entitle given}\@ehc}
-
-\makeatletter
-\renewcommand*{\maketitle}{%
-    \begin{center}
-        \fontsize{14pt}{20pt}\selectfont
-        \textbf{\@title \\ \@entitle}
-        \par
-    \end{center}
-    \vskip 2cm
-}
-\makeatother
